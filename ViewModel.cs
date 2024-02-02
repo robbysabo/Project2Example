@@ -12,6 +12,11 @@ namespace Project2.ViewModel;
 
 public class Project2Viewmodel : INotifyPropertyChanged
 {
+    public Project2Viewmodel()
+    {
+        OnChangeButtonTextClicked = new Command<string>((key) => ChangeButtonText="change");
+    }
+
     public string Title { get; set; } = "Robert Sabo : Project 2";
 
     private string _myname = "Robert Sabo";
@@ -49,12 +54,6 @@ public class Project2Viewmodel : INotifyPropertyChanged
     {
         get;
         private set;
-    }
-
-
-    public Project2Viewmodel()
-    {
-        OnChangeButtonTextClicked = new Command<string>((key) => ChangeButtonText="change");
     }
 
     public void OnPropertyChanged([CallerMemberName] string? propertyName = null)
